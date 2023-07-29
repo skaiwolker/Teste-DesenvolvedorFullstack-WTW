@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3MEMERTa1n8NnN1UQsO+piNaoTYqNAMgDeexfKz2HGPNA6FDp7i8bn3UVG8JvGVTUDmZQpj3MKpRArJ4Y5zVWw==",
+  "dgSpecHash": "L1APoFndFPWsiqZsAHQlEGvoDoO2rDHA3JUpkaWIAi2bIKScfUxstYcFC0NGW94WtQoFjkqesiyVxb6Tf3WnfA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\darta\\OneDrive\\Documents\\DArtagnan Lamarca\\Projetos\\Teste-DesenvolvedorFullstack-WTW\\Backend\\ToDoList\\Infrastructure\\Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\darta\\OneDrive\\Documents\\DArtagnanLamarca\\Projetos\\Teste-DesenvolvedorFullstack-WTW\\Backend\\ToDoList\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\darta\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\darta\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",

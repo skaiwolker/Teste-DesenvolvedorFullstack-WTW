@@ -22,3 +22,15 @@ C:\Users\darta\OneDrive\Documents\DArtagnan Lamarca\Projetos\Teste-Desenvolvedor
 C:\Users\darta\OneDrive\Documents\DArtagnan Lamarca\Projetos\Teste-DesenvolvedorFullstack-WTW\Backend\ToDoList\Domain\obj\Debug\net7.0\refint\Domain.dll
 C:\Users\darta\OneDrive\Documents\DArtagnan Lamarca\Projetos\Teste-DesenvolvedorFullstack-WTW\Backend\ToDoList\Domain\obj\Debug\net7.0\Domain.pdb
 C:\Users\darta\OneDrive\Documents\DArtagnan Lamarca\Projetos\Teste-DesenvolvedorFullstack-WTW\Backend\ToDoList\Domain\obj\Debug\net7.0\ref\Domain.dll
+C:\Users\darta\OneDrive\Documents\DArtagnanLamarca\Projetos\Teste-DesenvolvedorFullstack-WTW\Backend\ToDoList\Domain\bin\Debug\net7.0\Domain.deps.json
+C:\Users\darta\OneDrive\Documents\DArtagnanLamarca\Projetos\Teste-DesenvolvedorFullstack-WTW\Backend\ToDoList\Domain\bin\Debug\net7.0\Domain.dll
+C:\Users\darta\OneDrive\Documents\DArtagnanLamarca\Projetos\Teste-DesenvolvedorFullstack-WTW\Backend\ToDoList\Domain\bin\Debug\net7.0\Domain.pdb
+C:\Users\darta\OneDrive\Documents\DArtagnanLamarca\Projetos\Teste-DesenvolvedorFullstack-WTW\Backend\ToDoList\Domain\obj\Debug\net7.0\Domain.csproj.AssemblyReference.cache
+C:\Users\darta\OneDrive\Documents\DArtagnanLamarca\Projetos\Teste-DesenvolvedorFullstack-WTW\Backend\ToDoList\Domain\obj\Debug\net7.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\darta\OneDrive\Documents\DArtagnanLamarca\Projetos\Teste-DesenvolvedorFullstack-WTW\Backend\ToDoList\Domain\obj\Debug\net7.0\Domain.AssemblyInfoInputs.cache
+C:\Users\darta\OneDrive\Documents\DArtagnanLamarca\Projetos\Teste-DesenvolvedorFullstack-WTW\Backend\ToDoList\Domain\obj\Debug\net7.0\Domain.AssemblyInfo.cs
+C:\Users\darta\OneDrive\Documents\DArtagnanLamarca\Projetos\Teste-DesenvolvedorFullstack-WTW\Backend\ToDoList\Domain\obj\Debug\net7.0\Domain.csproj.CoreCompileInputs.cache
+C:\Users\darta\OneDrive\Documents\DArtagnanLamarca\Projetos\Teste-DesenvolvedorFullstack-WTW\Backend\ToDoList\Domain\obj\Debug\net7.0\Domain.dll
+C:\Users\darta\OneDrive\Documents\DArtagnanLamarca\Projetos\Teste-DesenvolvedorFullstack-WTW\Backend\ToDoList\Domain\obj\Debug\net7.0\refint\Domain.dll
+C:\Users\darta\OneDrive\Documents\DArtagnanLamarca\Projetos\Teste-DesenvolvedorFullstack-WTW\Backend\ToDoList\Domain\obj\Debug\net7.0\Domain.pdb
+C:\Users\darta\OneDrive\Documents\DArtagnanLamarca\Projetos\Teste-DesenvolvedorFullstack-WTW\Backend\ToDoList\Domain\obj\Debug\net7.0\ref\Domain.dll

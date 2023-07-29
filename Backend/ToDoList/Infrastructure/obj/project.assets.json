@@ -3550,11 +3550,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\darta\\OneDrive\\Documents\\DArtagnan Lamarca\\Projetos\\Teste-DesenvolvedorFullstack-WTW\\Backend\\ToDoList\\Infrastructure\\Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\darta\\OneDrive\\Documents\\DArtagnanLamarca\\Projetos\\Teste-DesenvolvedorFullstack-WTW\\Backend\\ToDoList\\Infrastructure\\Infrastructure.csproj",
       "projectName": "Infrastructure",
-      "projectPath": "C:\\Users\\darta\\OneDrive\\Documents\\DArtagnan Lamarca\\Projetos\\Teste-DesenvolvedorFullstack-WTW\\Backend\\ToDoList\\Infrastructure\\Infrastructure.csproj",
+      "projectPath": "C:\\Users\\darta\\OneDrive\\Documents\\DArtagnanLamarca\\Projetos\\Teste-DesenvolvedorFullstack-WTW\\Backend\\ToDoList\\Infrastructure\\Infrastructure.csproj",
       "packagesPath": "C:\\Users\\darta\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\darta\\OneDrive\\Documents\\DArtagnan Lamarca\\Projetos\\Teste-DesenvolvedorFullstack-WTW\\Backend\\ToDoList\\Infrastructure\\obj\\",
+      "outputPath": "C:\\Users\\darta\\OneDrive\\Documents\\DArtagnanLamarca\\Projetos\\Teste-DesenvolvedorFullstack-WTW\\Backend\\ToDoList\\Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\darta\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3571,8 +3571,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\darta\\OneDrive\\Documents\\DArtagnan Lamarca\\Projetos\\Teste-DesenvolvedorFullstack-WTW\\Backend\\ToDoList\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\darta\\OneDrive\\Documents\\DArtagnan Lamarca\\Projetos\\Teste-DesenvolvedorFullstack-WTW\\Backend\\ToDoList\\Domain\\Domain.csproj"
+            "C:\\Users\\darta\\OneDrive\\Documents\\DArtagnanLamarca\\Projetos\\Teste-DesenvolvedorFullstack-WTW\\Backend\\ToDoList\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\darta\\OneDrive\\Documents\\DArtagnanLamarca\\Projetos\\Teste-DesenvolvedorFullstack-WTW\\Backend\\ToDoList\\Domain\\Domain.csproj"
             }
           }
         }

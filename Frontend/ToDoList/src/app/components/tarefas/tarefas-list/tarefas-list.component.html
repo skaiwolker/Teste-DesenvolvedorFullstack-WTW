@@ -1,0 +1,28 @@
+<div>
+    <h1>Minhas tarefas</h1>
+    <table *ngIf="tarefas">
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Descrição</th>
+                <th>Prioridade</th>
+                <th>Status</th>
+                <th>Data de Inicio</th>
+                <th>Data de Conclusão</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let tarefa of tarefas">
+                <td>{{ tarefa.titulo}}</td>
+                <td>{{ tarefa.descricao}}</td>
+                <td>{{ tarefa.prioridade}}</td>
+                <td>{{ tarefa.status}}</td>
+                <td>{{ tarefa.dataDeInicio}}</td>
+                <td>{{ tarefa.dataDeConclusao}}</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <p *ngIf="!tarefas">Você não possui nenhuma tarefas</p>
+</div>
