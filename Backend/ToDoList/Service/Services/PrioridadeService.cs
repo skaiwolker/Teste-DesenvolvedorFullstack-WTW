@@ -1,9 +1,9 @@
 ﻿using Domain.Entities;
 using Domain.Interfaces.Repository;
 using Domain.Interfaces.Service;
-using Service.Service.Base;
+using Service.Services.Base;
 
-namespace Service.Service
+namespace Services.Service
 {
     public class PrioridadeService : BaseService<Prioridade>, IPrioridadeService
     {

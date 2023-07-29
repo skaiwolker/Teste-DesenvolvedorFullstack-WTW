@@ -9,8 +9,8 @@ namespace Infrastructure.Context
         {
         }
 
-        public DbSet<Tarefa> Tarefas { get; set; }
-        public DbSet<Prioridade> Prioridades { get; set; }
-        public DbSet<Status> Statuses { get; set; }
+        public DbSet<Tarefa> Tarefa { get; set; }
+        public DbSet<Prioridade> Prioridade { get; set; }
+        public DbSet<Status> Status { get; set; }
     }
 }

@@ -9,7 +9,6 @@ namespace Infrastructure.Repository.Base
 {
     public abstract class BaseRepository<T> : IBaseRepository<T> where T : EntityBase
     {
-        protected readonly List<string> _columns;
         protected readonly string _tableName;
 
         private readonly TarefaContext _context;
@@ -17,14 +16,11 @@ namespace Infrastructure.Repository.Base
 
         public BaseRepository(TarefaContext context, IConfiguration configuration)
         {
-            _tableName = nameof(T);
+            _tableName = typeof(T).Name;
             _context = context;
             _connection = _connection.AddConnection(configuration);
         }
 
-        public BaseRepository(TarefaContext context, IConfiguration configuration, List<string> columns) : this(context, configuration)
-        {
-        }
         public async Task Add(T entity)
         {
             _context.Set<T>().Add(entity);
@@ -41,34 +37,19 @@ namespace Infrastructure.Repository.Base
         {
             string query = $"SELECT * FROM {_tableName}";
 
-            var result = _connection.QueryAsync<T>(query);
+            var result = await _connection.QueryAsync<T>(query);
 
-            return result.Result.ToList();
+            return result.ToList();
         }
 
         public async Task<T> GetById(Guid id)
         {
-            string query = $"SELECT * FROM {_tableName} WHERE Id = {id}";
+            string query = $"SELECT * FROM {_tableName} WHERE Id = '{id}'";
 
-            var result = _connection.QueryFirstOrDefaultAsync<T>(query);
+            var result = await _connection.QueryFirstOrDefaultAsync<T>(query);
 
-            return result.Result;
+            return result;
         }
 
-        private string GetSelectQuery()
-        {
-            var query = "select ";
-
-            foreach (var column in _columns)
-            {
-                query += column + ", ";
-            }
-
-            query = query.Substring(0, query.Length - 1);
-
-            query += $"from {_tableName}";
-
-            return query;
-        }
     }
 }

@@ -1,27 +1,31 @@
-﻿using Domain.Entities.Base;
+﻿using AutoMapper;
+using Domain.DTOs.Base;
+using Domain.Entities.Base;
 using Domain.Interfaces.Service.Base;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Aplication.Controllers.Base
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BaseController<T> : ControllerBase where T : EntityBase
+    public abstract class BaseController<T, TDTO> : ControllerBase where TDTO : BaseDTO where T : EntityBase
     {
         private readonly IBaseService<T> _service;
+        private readonly IMapper _mapper;
 
-        public BaseController(IBaseService<T> service)
+        public BaseController(IBaseService<T> service, IMapper mapper)
         {
             _service = service;
+            _mapper = mapper;
         }
 
         [HttpPost]
-        public async Task<ActionResult> Add([FromBody] T obj)
+        public async Task<ActionResult> Add([FromBody] TDTO obj)
         {
             try
             {
-                await _service.Add(obj);
+                var dbObj = _mapper.Map<T>(obj); 
+                await _service.Add(dbObj);
                 return Ok();
             }
             catch (Exception ex)
@@ -45,11 +49,12 @@ namespace Aplication.Controllers.Base
         }
 
         [HttpGet("{id:guid}")]
-        public async Task<ActionResult<T>> GetById(Guid id)
+        public async Task<ActionResult<TDTO>> GetById(Guid id)
         {
             try
             {
-                return Ok(await _service.GetById(id));
+                var obj = _mapper.Map<TDTO>(await _service.GetById(id));
+                return Ok(obj);
             }
             catch (Exception ex)
             {
@@ -58,11 +63,12 @@ namespace Aplication.Controllers.Base
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<T>>> GetAll()
+        public async Task<ActionResult<List<TDTO>>> GetAll()
         {
             try
             {
-                return Ok(await _service.GetAll());
+                var obj = _mapper.Map<List<TDTO>>(await _service.GetAll());
+                return Ok(obj);
             }
             catch (Exception ex)
             {

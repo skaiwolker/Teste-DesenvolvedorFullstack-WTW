@@ -8,7 +8,6 @@ namespace Domain.Entities
         public string Descricao { get; set; }
         public DateTime DataDeInicio { get; set; }
         public DateTime DataDeConclusao { get; set; }
-
         public Guid PrioridadeId { get; set; }
         public virtual Prioridade Prioridade { get; set; }
         public Guid StatusId { get; set; }

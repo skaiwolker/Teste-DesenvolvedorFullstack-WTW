@@ -1,10 +1,12 @@
-using Domain.Interfaces.Repository;
-using Domain.Interfaces.Service;
+using Aplication.DependencyInjection;
+using AutoMapper;
+using Domain.DTOs;
+using Domain.DTOs.Base;
+using Domain.Entities;
+using Domain.Entities.Base;
 using Infrastructure.Context;
-using Infrastructure.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
-using Service.Service;
 using System.Text.Json.Serialization;
 
 namespace Aplication
@@ -22,10 +24,12 @@ namespace Aplication
         {
             services.AddCors(options =>
             {
-                options.AddPolicy(name: "All",
+                options.AddPolicy(name: "MyPolicy",
                                   builder =>
                                   {
-                                      builder.WithOrigins("*");
+                                      builder.AllowAnyOrigin()
+                                             .AllowAnyMethod()
+                                             .AllowAnyHeader();
                                   });
             });
 
@@ -35,27 +39,40 @@ namespace Aplication
                 c.SwaggerDoc("v1",
                     new OpenApiInfo()
                     {
-                        Title = "be3 Test - Leandro Romanelli",
+                        Title = "Teste Desenvolvedor Fullstack - DArtagnan Lamarca",
                         Version = "v1",
-                        Description = "be3 Test - Leandro Romanelli",
+                        Description = "Teste Desenvolvedor Fullstack - DArtagnan Lamarca",
                         Contact = new OpenApiContact
                         {
-                            Name = "Leandro Romanelli",
-                            Url = new Uri("https://github.com/leandroromanelli")
+                            Name = "DArtagnan Lamarca",
+                            Url = new Uri("https://github.com/skaiwolker")
                         }
                     });
             });
 
+            var mapperConfig = new MapperConfiguration(mc =>
+            {
+                mc.CreateMap<EntityBase, BaseDTO>();
+                mc.CreateMap<BaseDTO, EntityBase>();
 
-            services.AddScoped<IPrioridadeRepository, PrioridadeRepository>();
-            services.AddScoped<IPrioridadeService, PrioridadeService>();
+                mc.CreateMap<Prioridade, PrioridadeDTO>();
+                mc.CreateMap<PrioridadeDTO, Prioridade>();
 
-            services.AddScoped<IStatusRepository, StatusRepository>();
-            services.AddScoped<IStatusService, StatusService>();
+                mc.CreateMap<Status, StatusDTO>();
+                mc.CreateMap<StatusDTO, Status>();
 
-            services.AddScoped<ITarefaRepository, TarefaRepository>();
-            services.AddScoped<ITarefaService, TarefaService>();
+                mc.CreateMap<Tarefa, TarefaDTO>()
+                .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status.Titulo))
+                .ForMember(dest => dest.Prioridade, opt => opt.MapFrom(src => src.Prioridade.Titulo));
+                mc.CreateMap<TarefaDTO, Tarefa>();
+            });
 
+            IMapper mapper = mapperConfig.CreateMapper();
+            services.AddSingleton(mapper);
+
+            services.AddMvc();
+
+            services.AddDependencyInjection(Configuration);
 
             services.AddDbContext<TarefaContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
@@ -63,19 +80,26 @@ namespace Aplication
                 x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, TarefaContext db)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseCors("All");
+            using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            {
+                var context = serviceScope.ServiceProvider.GetRequiredService<TarefaContext>();
+                context.Database.Migrate();
+            }
+
+            app.UseCors("MyPolicy");
 
             app.UseSwagger();
-            
-            app.UseSwaggerUI(c => {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "be3 Test - Leandro Romanelli");
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Teste Desenvolvedor Fullstack - DArtagnan Lamarca");
             });
 
             app.UseRouting();

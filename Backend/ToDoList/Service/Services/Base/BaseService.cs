@@ -1,13 +1,8 @@
 ﻿using Domain.Entities.Base;
 using Domain.Interfaces.Repository.Base;
 using Domain.Interfaces.Service.Base;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Service.Service.Base
+namespace Service.Services.Base
 {
     public abstract class BaseService<T> : IBaseService<T> where T : EntityBase
     {

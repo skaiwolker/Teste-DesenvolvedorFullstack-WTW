@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "PoWs7sb7JZzfj8Dq9AlDQWfVHQ7va2bJz1jm3Lr88P52pFWn1kCv9xGXfviUb4hmNSAUrwHtGlTpXD5VndwaqA==",
+  "dgSpecHash": "gZLi4+q5IJ0hb6h5zPGxPMi6iOBL8Il44aSNi///txqp8mDBVyQeiAj1Q8cQZB7mcSNCoMg+2Vex6peSJVPwaA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\dartagnanl\\Documents\\GitHub\\Teste-DesenvolvedorFullstack-WTW\\Backend\\ToDoList\\Domain\\Domain.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\darta\\OneDrive\\Documents\\DArtagnan Lamarca\\Projetos\\Teste-DesenvolvedorFullstack-WTW\\Backend\\ToDoList\\Domain\\Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\darta\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\darta\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }
