@@ -30,6 +30,6 @@ export class TarefasService {
   }
 
   concluirTarefa(id: string){
-    return this.http.patch(this.baseApiUrl + `/api/Tarefa/ConcluirTarefa/`, id);
+    return this.http.head(this.baseApiUrl + `/api/Tarefa/ConcluirTarefa?Id=` + id);
   }
 }

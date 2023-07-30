@@ -83,6 +83,8 @@ namespace Infrastructure.Migrations
             migrationBuilder.Sql("INSERT INTO Prioridade(Titulo) Values('Baixa')");
             migrationBuilder.Sql("INSERT INTO Prioridade(Titulo) Values('Média')");
             migrationBuilder.Sql("INSERT INTO Prioridade(Titulo) Values('Alta')");
+
+            migrationBuilder.Sql("INSERT INTO Tarefa(Descricao,PrioridadeId,StatusId,Titulo) Values('Criar sua primeira tarefa do teste do DArtagnan',3,1,'Criar a primeira tarefa')");
         }
 
         /// <inheritdoc />

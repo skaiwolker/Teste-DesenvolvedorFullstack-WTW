@@ -1,26 +1,28 @@
+<body>
 <div>
     <h1> Criar uma nova tarefa</h1>
     <form #form="ngForm" (ngSubmit)="addTarefa()">
-        <div>
-            <label for="titulo">Título</label>
-            <input type="text" id="titulo" placeholder="Título da sua tarefa"
-             name="titulo" [(ngModel)]="addTarefaRequest.titulo">
-        </div>
-        <div>
-            <label for="descricao">Descrição</label>
-            <textarea id="descricao" rows="4" cols="50" placeholder="Descrição da sua tarefa"
-            name="descricao" [(ngModel)]="addTarefaRequest.descricao"></textarea>
-        </div>
-        <div>
-            <label for="prioridade">Prioridade</label>
+        <div class="campo">
+            <label for="titulo">Título:</label><br>
+            <input required type="text" id="titulo" placeholder="Título da sua tarefa"
+             name="titulo" [(ngModel)]="addTarefaRequest.titulo" required><br>
+        </div><br>
+        <div class="campo">
+            <label for="descricao">Descrição:</label><br>
+            <textarea required id="descricao" rows="4" cols="50" placeholder="Descrição da sua tarefa"
+            name="descricao" [(ngModel)]="addTarefaRequest.descricao" required></textarea><br>
+        </div><br>
+        <div class="campo">
+            <label for="prioridade">Prioridade:</label><br>
             <select id="prioridade" name="prioridade" [(ngModel)]="addTarefaRequest.prioridadeId">
                 <option value="1">Baixa</option>
                 <option value="2">Média</option>
                 <option value="3">Alta</option>
-            </select>
-        </div>
+            </select><br>
+        </div><br>
         <div>
-            <button type="submit">Criar</button>
+            <button class="criarButton" type="submit">Criar</button>
         </div>
     </form>
 </div>
+</body>

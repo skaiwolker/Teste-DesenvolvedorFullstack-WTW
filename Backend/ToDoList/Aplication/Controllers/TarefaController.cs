@@ -75,7 +75,7 @@ namespace Aplication.Controllers
             }
         }
 
-        [HttpPatch("ConcluirTarefa/{id:guid}")]
+        [HttpHead("ConcluirTarefa")]
         public async Task<ActionResult> ConcluirTarefa(Guid Id)
         {
             try

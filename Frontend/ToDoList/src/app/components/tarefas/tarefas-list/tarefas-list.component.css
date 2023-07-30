@@ -1,0 +1,91 @@
+td {
+    padding: 5px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-family: "Verdana";
+    font-size: small;
+}
+
+th {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+    background-color: #e7e7e7;
+}
+
+table {
+    width: 100%;
+}
+
+.deleteButton { 
+    background-color: #f44336;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    padding: 12px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.deleteButton:hover {
+    background: #75150e;
+    box-shadow: inset 2px 2px 2px rgba(0,0,0,0.2);
+    text-shadow: none;
+}
+
+.iniciarButton { 
+    background-color: #e7e7e7; 
+    border: none;
+    border-radius: 4px;
+    color: black;
+    padding: 12px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.iniciarButton:hover {
+    background: #6d6d6d;
+    box-shadow: inset 2px 2px 2px rgba(0,0,0,0.2);
+    text-shadow: none;
+}
+
+.concluirButton { 
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    padding: 12px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.concluirButton:hover {
+    background: #136316;
+    box-shadow: inset 2px 2px 2px rgba(0,0,0,0.2);
+    text-shadow: none;
+}
+
+h1 {
+    font-family: sans-serif;
+    color: #181818;
+    text-align: center;
+} 
+
+body{
+    font-family: sans-serif;
+    font-size: 1em;
+    margin-top: 2%;
+    justify-content: center;
+}
