@@ -1,11 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 namespace Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class Inicial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -14,64 +15,74 @@ namespace Infrastructure.Migrations
                 name: "Prioridade",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false, defaultValue: "newsequentialid()"),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Titulo = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Prioridades", x => x.Id);
+                    table.PrimaryKey("PK_Prioridade", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Status",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false, defaultValue: "newsequentialid()"),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Titulo = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Statuses", x => x.Id);
+                    table.PrimaryKey("PK_Status", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Tarefa",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false, defaultValue: "newsequentialid()"),
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false, defaultValueSql: "NEWSEQUENTIALID()"),
                     Descricao = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DataDeInicio = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    DataDeConclusao = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    PrioridadeId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    StatusId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    DataDeInicio = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DataDeConclusao = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    PrioridadeId = table.Column<int>(type: "int", nullable: false),
+                    StatusId = table.Column<int>(type: "int", nullable: false),
                     Titulo = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Tarefas", x => x.Id);
+                    table.PrimaryKey("PK_Tarefa", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Tarefas_Prioridades_PrioridadeId",
+                        name: "FK_Tarefa_Prioridade_PrioridadeId",
                         column: x => x.PrioridadeId,
                         principalTable: "Prioridade",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Tarefas_Statuses_StatusId",
+                        name: "FK_Tarefa_Status_StatusId",
                         column: x => x.StatusId,
-                        principalTable: "Statuse",
+                        principalTable: "Status",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Tarefas_PrioridadeId",
+                name: "IX_Tarefa_PrioridadeId",
                 table: "Tarefa",
                 column: "PrioridadeId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Tarefas_StatusId",
+                name: "IX_Tarefa_StatusId",
                 table: "Tarefa",
                 column: "StatusId");
+
+            migrationBuilder.Sql("INSERT INTO Status(Titulo) Values('Não Iniciada')");
+            migrationBuilder.Sql("INSERT INTO Status(Titulo) Values('Em Andamento')");
+            migrationBuilder.Sql("INSERT INTO Status(Titulo) Values('Concluída')");
+
+            migrationBuilder.Sql("INSERT INTO Prioridade(Titulo) Values('Baixa')");
+            migrationBuilder.Sql("INSERT INTO Prioridade(Titulo) Values('Média')");
+            migrationBuilder.Sql("INSERT INTO Prioridade(Titulo) Values('Alta')");
         }
 
         /// <inheritdoc />

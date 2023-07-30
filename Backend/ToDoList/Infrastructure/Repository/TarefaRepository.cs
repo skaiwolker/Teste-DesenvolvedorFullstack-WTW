@@ -2,18 +2,31 @@
 using Domain.Entities;
 using Domain.Interfaces.Repository;
 using Infrastructure.Context;
-using Infrastructure.Repository.Base;
 using Microsoft.Extensions.Configuration;
 using System.Data;
 
 namespace Infrastructure.Repository
 {
-    public class TarefaRepository : BaseRepository<Tarefa>, ITarefaRepository
+    public class TarefaRepository : ITarefaRepository
     {
         private readonly IDbConnection _connection;
-        public TarefaRepository(TarefaContext context, IConfiguration configuration) : base(context, configuration)
+        private readonly TarefaContext _context;
+        public TarefaRepository(TarefaContext context, IConfiguration configuration)
         {
+            _context = context;
             _connection = _connection.AddConnection(configuration);
+        }
+
+        public async Task Add(Tarefa entity)
+        {
+            _context.Tarefa.Add(entity);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task Delete(Tarefa entity)
+        {
+            _context.Tarefa.Remove(entity);
+            await _context.SaveChangesAsync();
         }
 
         public async Task<List<Tarefa>> GetTarefasWithAllDetails()
@@ -30,6 +43,21 @@ namespace Infrastructure.Repository
             });
 
             return result.ToList();
+        }
+
+        public async Task<Tarefa> GetById(Guid id)
+        {
+            string query = $"SELECT * FROM Tarefa WHERE Id = '{id}'";
+
+            var result = await _connection.QueryFirstOrDefaultAsync<Tarefa>(query);
+
+            return result;
+        }
+
+        public async Task AtualizarStatus(Tarefa entity)
+        {
+            _context.Tarefa.Update(entity);
+            await _context.SaveChangesAsync();
         }
     }
 }

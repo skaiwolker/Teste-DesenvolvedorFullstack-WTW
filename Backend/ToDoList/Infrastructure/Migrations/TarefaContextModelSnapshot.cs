@@ -24,9 +24,11 @@ namespace Infrastructure.Migrations
 
             modelBuilder.Entity("Domain.Entities.Prioridade", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Titulo")
                         .IsRequired()
@@ -34,14 +36,16 @@ namespace Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Prioridades");
+                    b.ToTable("Prioridade");
                 });
 
             modelBuilder.Entity("Domain.Entities.Status", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Titulo")
                         .IsRequired()
@@ -49,7 +53,7 @@ namespace Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Statuses");
+                    b.ToTable("Status");
                 });
 
             modelBuilder.Entity("Domain.Entities.Tarefa", b =>
@@ -58,21 +62,21 @@ namespace Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("DataDeConclusao")
+                    b.Property<DateTime?>("DataDeConclusao")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("DataDeInicio")
+                    b.Property<DateTime?>("DataDeInicio")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Descricao")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("PrioridadeId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("PrioridadeId")
+                        .HasColumnType("int");
 
-                    b.Property<Guid>("StatusId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("StatusId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Titulo")
                         .IsRequired()
@@ -84,7 +88,7 @@ namespace Infrastructure.Migrations
 
                     b.HasIndex("StatusId");
 
-                    b.ToTable("Tarefas");
+                    b.ToTable("Tarefa");
                 });
 
             modelBuilder.Entity("Domain.Entities.Tarefa", b =>

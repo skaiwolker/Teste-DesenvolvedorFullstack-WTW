@@ -16,4 +16,20 @@ export class TarefasService {
   getAllTarefasWithDetails(): Observable<Tarefa[]>{
     return this.http.get<Tarefa[]>(this.baseApiUrl + `/api/Tarefa/GetTarefasWithAllDetails`);
   }
+
+  addTarefa(addTarefaRequest: Tarefa): Observable<Tarefa>{
+    return this.http.post<Tarefa>(this.baseApiUrl + `/api/Tarefa/Add`, addTarefaRequest);
+  }
+
+  deletarTarefa(id: string){
+    return this.http.delete(this.baseApiUrl + `/api/Tarefa/Delete/` + id);
+  }
+
+  iniciarTarefa(id: string){
+    return this.http.head(this.baseApiUrl + `/api/Tarefa/IniciarTarefa?Id=` + id);
+  }
+
+  concluirTarefa(id: string){
+    return this.http.patch(this.baseApiUrl + `/api/Tarefa/ConcluirTarefa/`, id);
+  }
 }

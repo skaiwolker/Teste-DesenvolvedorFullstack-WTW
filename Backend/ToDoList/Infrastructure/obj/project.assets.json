@@ -3545,19 +3545,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\darta\\.nuget\\packages\\": {}
+    "C:\\Users\\dartagnanl\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\darta\\OneDrive\\Documents\\DArtagnanLamarca\\Projetos\\Teste-DesenvolvedorFullstack-WTW\\Backend\\ToDoList\\Infrastructure\\Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\dartagnanl\\Documents\\GitHub\\Teste-DesenvolvedorFullstack-WTW\\Backend\\ToDoList\\Infrastructure\\Infrastructure.csproj",
       "projectName": "Infrastructure",
-      "projectPath": "C:\\Users\\darta\\OneDrive\\Documents\\DArtagnanLamarca\\Projetos\\Teste-DesenvolvedorFullstack-WTW\\Backend\\ToDoList\\Infrastructure\\Infrastructure.csproj",
-      "packagesPath": "C:\\Users\\darta\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\darta\\OneDrive\\Documents\\DArtagnanLamarca\\Projetos\\Teste-DesenvolvedorFullstack-WTW\\Backend\\ToDoList\\Infrastructure\\obj\\",
+      "projectPath": "C:\\Users\\dartagnanl\\Documents\\GitHub\\Teste-DesenvolvedorFullstack-WTW\\Backend\\ToDoList\\Infrastructure\\Infrastructure.csproj",
+      "packagesPath": "C:\\Users\\dartagnanl\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\dartagnanl\\Documents\\GitHub\\Teste-DesenvolvedorFullstack-WTW\\Backend\\ToDoList\\Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\darta\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\dartagnanl\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3565,14 +3565,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://gitlab.com/api/v4/projects/43998283/packages/nuget/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\darta\\OneDrive\\Documents\\DArtagnanLamarca\\Projetos\\Teste-DesenvolvedorFullstack-WTW\\Backend\\ToDoList\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\darta\\OneDrive\\Documents\\DArtagnanLamarca\\Projetos\\Teste-DesenvolvedorFullstack-WTW\\Backend\\ToDoList\\Domain\\Domain.csproj"
+            "C:\\Users\\dartagnanl\\Documents\\GitHub\\Teste-DesenvolvedorFullstack-WTW\\Backend\\ToDoList\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\dartagnanl\\Documents\\GitHub\\Teste-DesenvolvedorFullstack-WTW\\Backend\\ToDoList\\Domain\\Domain.csproj"
             }
           }
         }
@@ -3622,7 +3623,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

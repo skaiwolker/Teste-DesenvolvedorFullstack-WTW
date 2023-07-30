@@ -1,13 +1,10 @@
-﻿using Domain.DTOs.Base;
-
-namespace Domain.DTOs
+﻿namespace Domain.DTOs
 {
-    public class TarefaDTO : BaseDTO
+    public class TarefaDTO
     {
+        public Guid Id { get; set; }
+        public string Titulo { get; set; }
         public string Descricao { get; set; }
-        public DateTime DataDeInicio { get; set; }
-        public DateTime DataDeConclusao { get; set; }
-        public string Status { get; set; }
-        public string Prioridade { get; set; }
+        public int PrioridadeId { get; set; }
     }
 }

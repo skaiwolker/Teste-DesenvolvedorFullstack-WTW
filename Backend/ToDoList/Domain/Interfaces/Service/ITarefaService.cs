@@ -1,10 +1,13 @@
 ﻿using Domain.Entities;
-using Domain.Interfaces.Service.Base;
 
 namespace Domain.Interfaces.Service
 {
-    public interface ITarefaService : IBaseService<Tarefa>
+    public interface ITarefaService
     {
+        Task Add(Tarefa entity);
+        Task Delete(Guid Id);
         Task<List<Tarefa>> GetTarefasWithAllDetails();
+        Task IniciarTarefa(Guid Id);
+        Task ConcluirTarefa(Guid Id);
     }
 }

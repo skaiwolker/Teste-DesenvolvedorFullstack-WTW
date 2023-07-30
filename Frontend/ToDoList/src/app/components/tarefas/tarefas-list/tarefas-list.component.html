@@ -13,14 +13,20 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let tarefa of tarefas">
+            <tr *ngFor="let tarefa of tarefas">    
                 <td>{{ tarefa.titulo}}</td>
                 <td>{{ tarefa.descricao}}</td>
                 <td>{{ tarefa.prioridade}}</td>
                 <td>{{ tarefa.status}}</td>
                 <td>{{ tarefa.dataDeInicio}}</td>
                 <td>{{ tarefa.dataDeConclusao}}</td>
-                <td></td>
+                <td><button (click)="deletarTarefa(tarefa.id)">Delete</button></td>
+                <td *ngIf="tarefa.status == 'Não Iniciada'">
+                    <button (click)="iniciarTarefa(tarefa.id)">Iniciar</button>
+                </td>
+                <td *ngIf="tarefa.status == 'Em Andamento'">
+                    <button (click)="concluirTarefa(tarefa.id)">Concluir</button>
+                </td>
             </tr>
         </tbody>
     </table>

@@ -246,3 +246,4 @@ C:\Users\darta\OneDrive\Documents\DArtagnanLamarca\Projetos\Teste-DesenvolvedorF
 C:\Users\darta\OneDrive\Documents\DArtagnanLamarca\Projetos\Teste-DesenvolvedorFullstack-WTW\Backend\ToDoList\Aplication\obj\Debug\net7.0\Aplication.pdb
 C:\Users\darta\OneDrive\Documents\DArtagnanLamarca\Projetos\Teste-DesenvolvedorFullstack-WTW\Backend\ToDoList\Aplication\obj\Debug\net7.0\Aplication.genruntimeconfig.cache
 C:\Users\darta\OneDrive\Documents\DArtagnanLamarca\Projetos\Teste-DesenvolvedorFullstack-WTW\Backend\ToDoList\Aplication\obj\Debug\net7.0\ref\Aplication.dll
+C:\Users\dartagnanl\Documents\GitHub\Teste-DesenvolvedorFullstack-WTW\Backend\ToDoList\Aplication\bin\Debug\net7.0\AutoMapper.dll

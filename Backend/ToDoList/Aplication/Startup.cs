@@ -1,9 +1,7 @@
 using Aplication.DependencyInjection;
 using AutoMapper;
 using Domain.DTOs;
-using Domain.DTOs.Base;
 using Domain.Entities;
-using Domain.Entities.Base;
 using Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
@@ -52,16 +50,7 @@ namespace Aplication
 
             var mapperConfig = new MapperConfiguration(mc =>
             {
-                mc.CreateMap<EntityBase, BaseDTO>();
-                mc.CreateMap<BaseDTO, EntityBase>();
-
-                mc.CreateMap<Prioridade, PrioridadeDTO>();
-                mc.CreateMap<PrioridadeDTO, Prioridade>();
-
-                mc.CreateMap<Status, StatusDTO>();
-                mc.CreateMap<StatusDTO, Status>();
-
-                mc.CreateMap<Tarefa, TarefaDTO>()
+                mc.CreateMap<Tarefa, TarefaGetDTO>()
                 .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status.Titulo))
                 .ForMember(dest => dest.Prioridade, opt => opt.MapFrom(src => src.Prioridade.Titulo));
                 mc.CreateMap<TarefaDTO, Tarefa>();
