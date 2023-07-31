@@ -76,12 +76,6 @@ namespace Aplication
                 app.UseDeveloperExceptionPage();
             }
 
-            using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
-            {
-                var context = serviceScope.ServiceProvider.GetRequiredService<TarefaContext>();
-                context.Database.Migrate();
-            }
-
             app.UseCors("MyPolicy");
 
             app.UseSwagger();

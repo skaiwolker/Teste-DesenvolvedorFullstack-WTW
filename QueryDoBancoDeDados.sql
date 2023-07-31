@@ -1,15 +1,9 @@
+/*CRIAÇÃO DA BASE DE DADOS*/
 CREATE DATABASE [ToDoListDB]
- CONTAINMENT = NONE
- ON  PRIMARY 
-( NAME = N'ToDoListDB', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\ToDoListDB.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
- LOG ON 
-( NAME = N'ToDoListDB_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\ToDoListDB_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
- WITH CATALOG_COLLATION = DATABASE_DEFAULT
-GO
 
+/*CRIAÇÃO DAS TABELAS*/
 USE [ToDoListDB]
 GO
-/****** Object:  Table [dbo].[Prioridade]    Script Date: 30/07/2023 21:06:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -23,7 +17,7 @@ CREATE TABLE [dbo].[Prioridade](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Status]    Script Date: 30/07/2023 21:06:22 ******/
+
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -37,7 +31,7 @@ CREATE TABLE [dbo].[Status](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Tarefa]    Script Date: 30/07/2023 21:06:22 ******/
+
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -71,7 +65,7 @@ GO
 ALTER TABLE [dbo].[Tarefa] CHECK CONSTRAINT [FK_Tarefa_Status_StatusId]
 GO
 
-
+/*INSERÇÃO DOS DADOS BÁSICOS NECESSÁRIOS PARA A CRIAÇÃO DA TAREFA*/
 INSERT INTO Status(Titulo) Values('Não Iniciada')
 INSERT INTO Status(Titulo) Values('Em Andamento')
 INSERT INTO Status(Titulo) Values('Concluída')
@@ -80,4 +74,5 @@ INSERT INTO Prioridade(Titulo) Values('Baixa')
 INSERT INTO Prioridade(Titulo) Values('Média')
 INSERT INTO Prioridade(Titulo) Values('Alta')
 
+/*INSERÇÃO DE UMA TAREFA INICIAL DE EXEMPLO*/
 INSERT INTO Tarefa(Descricao,PrioridadeId,StatusId,Titulo) Values('Criar sua primeira tarefa do teste do DArtagnan',3,1,'Criar a primeira tarefa')
